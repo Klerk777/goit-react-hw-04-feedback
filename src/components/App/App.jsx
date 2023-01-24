@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import Statistics from './Statistics/Statistics';
-import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
-import Section from './Section/Section';
-import Notification from './Notification/Notification';
+import Statistics from '../Statistics/Statistics';
+import FeedbackOptions from '../FeedbackOptions/FeedbackOptions';
+import Section from '../Section/Section';
+import Notification from '../Notification/Notification';
+import styles from './App.module.scss';
 
 export class App extends Component {
   state = {
@@ -21,7 +22,6 @@ export class App extends Component {
   };
 
   countTotalFeedback = () => {
-    console.log('RUN');
     return Object.values(this.state).reduce((previousValue, number) => {
       return previousValue + number;
     }, 0);
@@ -37,7 +37,7 @@ export class App extends Component {
     const totalFeadback = this.countTotalFeedback();
 
     return (
-      <div>
+      <div className={styles.appCpntainer}>
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={this.state}
