@@ -1,9 +1,10 @@
 .feedbackBtList {
   display: flex;
+  justify-content: space-between;
   gap: 20px;
 }
 .feedbackBtn {
-  width: 100px;
+  width: 90px;
   height: 32px;
   cursor: pointer;
 }
