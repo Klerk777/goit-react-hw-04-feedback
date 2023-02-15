@@ -1,15 +1,14 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Statistic.module.scss';
 import image from '../../images/1695725.png';
 
-function Statistics({ good, neutral, bad, total, positivePercentage }) {
+function Statistics({ feedbacks, total, positivePercentage }) {
   return (
     <div className={styles.statisticWrap}>
       <ul>
-        <li>Good: {good}</li>
-        <li>Neutral: {neutral}</li>
-        <li>Bad: {bad}</li>
+        <li>Good: {feedbacks.good}</li>
+        <li>Neutral: {feedbacks.neutral}</li>
+        <li>Bad: {feedbacks.bad}</li>
         <li>Total: {total}</li>
         <li>Positive feedback: {positivePercentage}%</li>
       </ul>
@@ -19,9 +18,12 @@ function Statistics({ good, neutral, bad, total, positivePercentage }) {
 }
 
 Statistics.propTypes = {
-  good: PropTypes.number.isRequired,
-  neutral: PropTypes.number.isRequired,
-  bad: PropTypes.number.isRequired,
+  feedbacks: PropTypes.shape({
+    good: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
+  }),
+
   total: PropTypes.number.isRequired,
   positivePercentage: PropTypes.number.isRequired,
 };
