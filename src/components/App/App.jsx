@@ -38,7 +38,7 @@ export class App extends Component {
 
     return (
       <div className={styles.appCpntainer}>
-        <Section title="Please leave feedback">
+        <Section title="Please leave your feedback">
           <FeedbackOptions
             options={this.state}
             onLeaveFeedback={this.handleClickBtn}
